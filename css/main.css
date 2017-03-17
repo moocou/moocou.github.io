@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 21px;
+}
+
+.container {
+    width: 80%;
+}
+
+div {
+    line-height: 2.5;
+    color: white;
+}
+
+img {
+    align-content: center;
+}
+
+#city,
+#time {
+    font-size: 50px;
+}
+
+#date {
+    text-decoration-line: underline;
+    text-decoration-color: #ebf2f2;
+}
+
+p {
+    font-size: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
