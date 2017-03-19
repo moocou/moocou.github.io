@@ -89,14 +89,30 @@
             <p class=" col-md-offset-2" id="p"> </p>
         </div>
     </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var time = (new Date()).toTimeString();
-            var $t = $("#time");
-            $t.text(time.substring(0, 8));
-            t = setTimeout(settime, 1000);
-        });
+    <script>
+function startTime()
+{
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+	m=checkTime(m);
+	s=checkTime(s);
+	document.getElementById('time').innerHTML=h+":"+m+":"+s;
+	setTimeout(function(){startTime()},500);
+}
 
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+    <script type="text/javascript">
+      
         function getmore() {
             $.getJSON("http://query.yahooapis.com/v1/public/yql", {
                 q: "select * from json where url=\"https://free-api.heweather.com/v5/weather?city=CN101190101&key=fc41cc1201184b96ad7359f41f281859\"",
